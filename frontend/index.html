@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career &amp; Skilling Navigator — From where you are to where you want to be</title>
+    <meta
+      name="description"
+      content="Tell us where you are, where you want to go and how much time you have. Career & Skilling Navigator turns that into a career readiness score, skill gaps, verified learning resources, a week-by-week roadmap and projects you can build."
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-testid="skip-to-content-link">Skip to content</a>
+
+    <header class="nav" data-testid="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="/" data-link data-testid="brand-home-link">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">Career &amp; Skilling Navigator</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation" data-testid="main-nav">
+          <a href="/" data-link data-nav="home" data-testid="nav-home-link">Home</a>
+          <a href="/navigator" data-link data-nav="navigator" data-testid="nav-navigator-link">Navigator</a>
+          <a href="/careers" data-link data-nav="careers" data-testid="nav-careers-link">Careers</a>
+          <a href="/learn" data-link data-nav="learn" data-testid="nav-learn-link">Learn</a>
+        </nav>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-testid="mobile-menu-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="bars" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" hidden data-testid="mobile-menu">
+        <a href="/" data-link data-testid="mobile-nav-home-link">Home</a>
+        <a href="/navigator" data-link data-testid="mobile-nav-navigator-link">Navigator</a>
+        <a href="/careers" data-link data-testid="mobile-nav-careers-link">Careers</a>
+        <a href="/learn" data-link data-testid="mobile-nav-learn-link">Learn</a>
+      </div>
+    </header>
+
+    <main id="main" data-testid="app-view"></main>
+
+    <footer class="footer" data-testid="site-footer">
+      <p>Career &amp; Skilling Navigator — a study-planning aid. Salary ranges are indicative, and no score guarantees a job or internship.</p>
+    </footer>
+
+    <button class="coach-fab" type="button" aria-expanded="false" aria-controls="coach-panel" data-testid="coach-fab-button">
+      <span aria-hidden="true">🤖</span>
+      <span class="coach-fab-label">AI Career Coach</span>
+    </button>
+
+    <section class="coach-panel" id="coach-panel" role="dialog" aria-modal="false" aria-label="AI Career Coach" hidden data-testid="coach-panel">
+      <header class="coach-head">
+        <div>
+          <h2>AI Career Coach</h2>
+          <p class="coach-sub" data-testid="coach-context-line">Knows your profile once you've run an analysis</p>
+        </div>
+        <button type="button" class="icon-btn" data-coach-close aria-label="Close career coach" data-testid="coach-close-button">✕</button>
+      </header>
+      <div class="coach-log" data-testid="coach-message-log" aria-live="polite"></div>
+      <div class="coach-suggestions" data-testid="coach-suggestions"></div>
+      <form class="coach-form" data-testid="coach-form">
+        <label class="sr-only" for="coach-input">Ask the career coach</label>
+        <input id="coach-input" name="question" autocomplete="off" placeholder="What should I learn first?" data-testid="coach-input" />
+        <button type="submit" class="btn btn-primary" data-testid="coach-send-button">Ask</button>
+      </form>
+    </section>
+
+    <div class="toast-wrap" aria-live="polite" data-testid="toast-wrap"></div>
+
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>
